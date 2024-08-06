@@ -6,3 +6,5 @@
 // };
 
 // 화살표 함수
+let hi = () => { return '안녕하세요?'}; // 한줄인 경우 return 생략 가능
+console.log(hi());
