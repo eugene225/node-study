@@ -1,5 +1,9 @@
 const express = require("express");
+const dbConnect = require("./config/dbConnect");
+
 const app = express();
+
+dbConnect();
 
 // body parser 미들웨어
 app.use(express.json());
