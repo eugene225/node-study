@@ -43,3 +43,30 @@ https://nodejs.org/docs/latest/api/path.html
 - 클라이언트에서 들어오는 요청에 따라 그에 맞는 함수를 실행하는 것
 - 사용자가 입력하는 URL에 따라 다른 내용을 보여줄 수 있음
 - GET, POST, PUT, DELETE 같은 요청 메서드에 따라 처리할 함수를 다르게 연결 가능
+
+---
+
+### Express 요청 객체의 속성
+
+| 속성      | 설명                                  |
+|-----------|---------------------------------------|
+| req.body  | POST 요청 시 넘겨준 정보 포함         |
+| req.cookies | 쿠키정보                            |
+| req.headers | 헤더정보                            |
+| req.params  | URL 뒤에 라우트 파라미터 정보       |
+| req.query   | 요청 URL에 포함된 질의 매개변수     |
+
+
+### Express 응답 객체의 함수
+| 함수 | 설명 |
+|-----------|-------------------|
+| res.download | 파일 다운로드 |
+| res.end | 응답 프로세스 종료 |
+| res.json | json 응답 전송 |
+| res.jsonp | jsonp 지원을 통해 json 응답 전송 |
+| res.redirect | 요청 경로를 재지정해서 강제 이동 |
+| res.render | 뷰 템플릿 화면에 렌더링 |
+| res.send | res.send() 괄호 안의 내용을 전송 |
+| res.sendFile | 지정한 경로의 파일을 읽어서 내용 전송 |
+| res.sendStatus | 상태메시지와 함께 HTTP 상태코드 전송 |
+| res.status | 응답의 상태코드 설정
