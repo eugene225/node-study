@@ -58,7 +58,7 @@ https://nodejs.org/docs/latest/api/path.html
 
 
 ### Express 응답 객체의 함수
-| 함수 | 설명 |
+| 함수       | 설명               |
 |-----------|-------------------|
 | res.download | 파일 다운로드 |
 | res.end | 응답 프로세스 종료 |
@@ -69,4 +69,26 @@ https://nodejs.org/docs/latest/api/path.html
 | res.send | res.send() 괄호 안의 내용을 전송 |
 | res.sendFile | 지정한 경로의 파일을 읽어서 내용 전송 |
 | res.sendStatus | 상태메시지와 함께 HTTP 상태코드 전송 |
-| res.status | 응답의 상태코드 설정
+| res.status | 응답의 상태코드 설정 |
+
+---
+
+### 미들웨어
+
+요청과 응답 중간에 있으면서 요청을 처리하거나 원하는 형태로 응답을 수정하는 기능을 가진 함수
+ex) 로그인 미들웨어 : 사용자 인증과정
+
+#### 라우터 미들웨어
+- 모듈화 `contactRoutes.js` 파일로 처리
+```
+// "/contacts" 공통 url 은 app.js에서 처리
+router.route("/")
+.get((req, res) => {
+    res.send("Contact Page");
+})
+.post((req, res) => {
+    res.send("Create Contacts");
+});
+```
+
+#### 바디파서 미들웨어
